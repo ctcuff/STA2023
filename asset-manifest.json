@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/STA2023/static/css/main.6e462f11.chunk.css",
+    "main.css": "/STA2023/static/css/main.4aa9dbdc.chunk.css",
     "main.js": "/STA2023/static/js/main.758ed433.chunk.js",
     "main.js.map": "/STA2023/static/js/main.758ed433.chunk.js.map",
     "runtime~main.js": "/STA2023/static/js/runtime~main.bf2520c5.js",
@@ -9,10 +9,10 @@
     "static/js/2.76a5e73e.chunk.js": "/STA2023/static/js/2.76a5e73e.chunk.js",
     "static/js/2.76a5e73e.chunk.js.map": "/STA2023/static/js/2.76a5e73e.chunk.js.map",
     "index.html": "/STA2023/index.html",
-    "precache-manifest.a599e204fecd164dc3ff563e5e994059.js": "/STA2023/precache-manifest.a599e204fecd164dc3ff563e5e994059.js",
+    "precache-manifest.2385c2cd816158b0ca5f43f3f4e2b88d.js": "/STA2023/precache-manifest.2385c2cd816158b0ca5f43f3f4e2b88d.js",
     "service-worker.js": "/STA2023/service-worker.js",
     "static/css/2.c75f12da.chunk.css.map": "/STA2023/static/css/2.c75f12da.chunk.css.map",
-    "static/css/main.6e462f11.chunk.css.map": "/STA2023/static/css/main.6e462f11.chunk.css.map",
+    "static/css/main.4aa9dbdc.chunk.css.map": "/STA2023/static/css/main.4aa9dbdc.chunk.css.map",
     "static/media/katex.min.css": "/STA2023/static/media/KaTeX_Typewriter-Regular.f43e8696.woff2",
     "static/media/freq.png": "/STA2023/static/media/freq.3f9fdb11.png"
   }
