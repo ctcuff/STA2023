@@ -1,0 +1,96 @@
+@import "globals";
+
+h1 {
+  margin-top: 24px;
+  & > a {
+    font-size: 36%;
+  }
+}
+
+mark {
+  background-color: #ffe5026e;
+}
+
+.img-responsive {
+  width: 60%;
+}
+
+.indent {
+  margin: 0 64px 0 32px;
+}
+
+.indent-2 {
+  margin: 0 64px 0 48px;
+}
+
+.header {
+  margin: 32px 0 16px 0;
+}
+
+.ul-indent-level-1 {
+  margin: 16px 64px 0 32px;
+  & > li {
+    margin: 12px 0 12px 0;
+  }
+}
+
+.ul-indent-level-2 {
+  margin: 8px 64px 0 48px;
+}
+
+.hr-spacing {
+  margin: 32px 0 32px 0;
+}
+
+ul#definition-list > li {
+  margin: 8px 0 8px;
+}
+
+ol.spacing > li {
+  margin: 12px 0 12px 0;
+}
+
+.footer > a {
+  float: right;
+  margin: 16px;
+  display: inline-block;
+}
+
+.header-ch-link {
+  float: right;
+}
+
+.spacer {
+  $spacer-margin: 32px;
+  margin: $spacer-margin 0 $spacer-margin 0;
+}
+
+.inline-math > span {
+  font-size: 20px;
+}
+
+// Desktop
+@media screen and (min-width: $screen-breakpoint) {
+  .container, .container-fluid {
+    margin-left: $sidebar-width;
+  }
+}
+
+// Mobile
+@media screen and (max-width: $screen-breakpoint - 1) {
+  .img-responsive {
+    width: 100%;
+  }
+  .indent {
+    margin: 0 16px 0 16px;
+  }
+  .indent-2 {
+    margin: 0 24px 0 24px;
+  }
+  .ul-indent-level-1 {
+    margin: 16px 0 0 0;
+  }
+  .ul-indent-level-2 {
+    margin: 8px 16px 0 16px;
+  }
+}

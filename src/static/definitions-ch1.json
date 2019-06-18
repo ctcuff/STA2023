@@ -1,0 +1,158 @@
+[
+  {
+    "word": "Blind study",
+    "definition": "Where the individual does not know if they are getting the treatment or a placebo."
+  },
+  {
+    "word": "Cause and effect",
+    "definition": "When people decide that one variable causes the other just because the variables are related or correlated."
+  },
+  {
+    "word": "Census",
+    "definition": "When every individual of interest is measured."
+  },
+  {
+    "word": "Cluster sampling",
+    "definition": "Break the population into groups called clusters, then randomly pick some clusters and poll all individuals in those clusters."
+  },
+  {
+    "word": "Continuous",
+    "definition": "Data you can measure."
+  },
+  {
+    "word": "Convenience sample",
+    "definition": "Where the researcher picks individuals to be included that are easy for the researcher to collect."
+  },
+  {
+    "word": "Cross-sectional study",
+    "definition": "Data observed, measured, or collected at one point in time."
+  },
+  {
+    "word": "Discrete",
+    "definition": "Data you can count."
+  },
+  {
+    "word": "Double-blind study",
+    "definition": "Where neither the individual nor the researcher knows who isgetting the treatment and who is getting the placebo."
+  },
+  {
+    "word": "Experiment",
+    "definition": "When the investigator changes a variable or imposes a treatment to determine its effect."
+  },
+  {
+    "word": "Hidden bias",
+    "definition": "A question asked in a way that makes a person respond a certain way."
+  },
+  {
+    "word": "Individual",
+    "definition": "A person or object that you are interested in finding out information about."
+  },
+  {
+    "word": "Interval",
+    "definition": "This data is ordinal. You can do arithmetic on this data, but only addition and subtraction. Examples of this are temperature and time on a clock."
+  },
+  {
+    "word": "Matched Pairs Design",
+    "definition": "The treatments are given to two groups that can be matched upwith each other in some ways."
+  },
+  {
+    "word": "Nominal",
+    "definition": "Name or category that CANNOT be put in order. Since there areno numbers, you cannot do any arithmetic on this level of data. Examples of this are gender, car name, ethnicity, and race."
+  },
+  {
+    "word": "Nonsampling error",
+    "definition": "Where the sample is collected poorly either through a biased sample or through error in measurements."
+  },
+  {
+    "word": "Observational study",
+    "definition": "When the investigator collects data merely by watching or asking questions. They don't change anything."
+  },
+  {
+    "word": "Ordinal",
+    "definition": "This data is nominal. You CANNOT do arithmetic on this data, but you can now put data values in order. Examples of this are letter grades."
+  },
+  {
+    "word": "Overgeneralization",
+    "definition": "When you do a study on one group and then try to say that it will happen on all groups."
+  },
+  {
+    "word": "Parameter",
+    "definition": "A number calculated from the population. Usually denoted with a Greek letter. This number is a fixed, unknown number that you want to find."
+  },
+  {
+    "word": "Population",
+    "definition": "The set of all values of the variable for the entire group of individuals."
+  },
+  {
+    "word": "Prospective (or longitudinal or cohort) study",
+    "definition": "Data collected in the future from groups sharing common factors."
+  },
+  {
+    "word": "Qualitative",
+    "definition": "A word or name that describes a quality of the individual (categorical variable)."
+  },
+  {
+    "word": "Quantitative",
+    "definition": "A number, something that can be counted or measured from the individual (numerical variable)."
+  },
+  {
+    "word": "Randomized Block Design",
+    "definition": "A block is a group of subjects that are similar, but the blocks differ from each other. Randomly assign treatments to subjects inside each block."
+  },
+  {
+    "word": "Randomized two-treatment experiment",
+    "definition": "In this experiment, there are two treatments,and individuals are randomly placed into the two groups. Either both groups get a treatment, or one group gets a treatment and the other gets either nothing or a placebo.The group getting either no treatment or the placebo is called the control group. The group getting the treatment is called the treatment group."
+  },
+  {
+    "word": "Ratio",
+    "definition": "This data is interval. You can do all arithmetic on this data. Examples of this are height, weight, distance, and time"
+  },
+  {
+    "word": "Replication",
+    "definition": "Repetition of an experiment on more than one subject so you can make sure that the sample is large enough to distinguish true effects from random effects."
+  },
+  {
+    "word": "Retrospective (or case control) study",
+    "definition": "Data collected from the past using records, interviews, and other similar artifacts."
+  },
+  {
+    "word": "Rigorously Controlled Design",
+    "definition": "Carefully assign subjects to different treatment groups,so that those given each treatment are similar in ways that are important to the experiment."
+  },
+  {
+    "word": "Sample",
+    "definition": "A subset from the population. It looks just like the population, but contains less data."
+  },
+  {
+    "word": "Sampling error",
+    "definition": "The difference between the sample results and the truepopulation results."
+  },
+  {
+    "word": "Simple random sample",
+    "definition": "A sample that is selected from a population in a way that ensures that every different possible sample of size n has the same chance of being selected."
+  },
+  {
+    "word": "Statistic",
+    "definition": "A number calculated from the sample. Usually denoted with letters from the Latin alphabet, though sometimes there is a Greek letter with a ^ (called a hat) above it. Since you can find samples, it is readily known, though it changes depending the sample taken. It is used to estimate the parameter value."
+  },
+  {
+    "word": "Statistics",
+    "definition": "The study of how to collect, organize, analyze, and interpret data collected from a group."
+  },
+  {
+    "word": "Stratified sampling",
+    "definition": "Breaking the population into groups called strata, then taking a simple random sample from each strata."
+  },
+  {
+    "word": "Systematic sampling",
+    "definition": "Randomly choosing a starting place then selecting every kth individual to measure."
+  },
+  {
+    "word": "Treatment",
+    "definition": "The experimental conditions imposed on the subjects."
+  },
+  {
+    "word": "Variable",
+    "definition": "The measurement or observation of the individual."
+  }
+]

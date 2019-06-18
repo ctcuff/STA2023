@@ -1,0 +1,46 @@
+@import "globals";
+
+$navigationColor: #ececec;
+
+.AppRouter-sidenav {
+  height: 100%;
+  width: $sidebar-width;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $navigationColor;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.AppRouter-navbar {
+  background-color: $navigationColor !important;
+}
+
+.AppRouter-li-indent {
+  margin: 8px 0 8px 25px;
+  & > a {
+    text-decoration: none;
+    color: #1a1a1abf;
+    &:focus {
+      color: red;
+    }
+  }
+}
+
+.AppRouter-ul {
+  padding-left: 0;
+  list-style: none inside;
+
+  & > li:not(.AppRouter-li-indent) {
+    margin: 8px 0 8px 12px;
+    & > a {
+      text-decoration: none;
+      color: #1a1a1abf;
+      &:focus {
+        color: darkred;
+      }
+    }
+  }
+}

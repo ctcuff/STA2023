@@ -1,0 +1,12 @@
+@import "globals";
+
+body {
+  font-family: Consolas, monospace;
+  margin: 0;
+}
+
+@media screen and (min-width: $screen-breakpoint) {
+  .index-container {
+    display: flex;
+  }
+}

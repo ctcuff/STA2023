@@ -1,0 +1,26 @@
+[
+  {
+    "word": "Mean",
+    "definition": "The average (sum of entries / total entries)"
+  },
+  {
+    "word": "Median",
+    "definition": "The data value in the middle of a sorted list of data. To find it, you put the data in order, and then determine which data value is in the middle of the data set."
+  },
+  {
+    "word": "Mode",
+    "definition": "The data value that occurs the most frequently in the data. To find it, you count how often each data value occurs, and then determine which data value occurs most often."
+  },
+  {
+    "word": "Range",
+    "definition": "the difference between the highest and the lowest data values (or maximum and minimum values)."
+  },
+  {
+    "word": "Ranking",
+    "definition": "A percentile . It represents a location measurement of a data value to the rest of the values."
+  },
+  {
+    "word": "Standard deviation",
+    "definition": "How far each value is from the mean."
+  }
+]
