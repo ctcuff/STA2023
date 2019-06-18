@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Single Page Apps for GitHub Pages</title>
     <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
       // https://github.com/rafrex/spa-github-pages
       // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
       // ----------------------------------------------------------------------
@@ -24,31 +25,14 @@
       const segmentCount = 1;
       const l = window.location;
       l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-          l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-          (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
       );
     </script>
   </head>
-  <style>
-    body {
-      font-family: Consolas, monospace;
-      margin: 0;
-    }
-
-    div {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
   <body>
-    <div>
-      <p>Not found. <a href="%PUBLIC_URL%">Go back</a></p>
-    </div>
   </body>
 </html>
