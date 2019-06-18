@@ -8,70 +8,16 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'katex/dist/katex.min.css';
 import '../style/Chapter.scss';
-
-const FrequencyTable = () => (
-    <div style={{ margin: '0 32px 0 32px' }}>
-      <Table bordered hover responsive size="sm">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Frequency</th>
-            <th>Relative Frequency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ford</td>
-            <td>5</td>
-            <td>0.10</td>
-          </tr>
-          <tr>
-            <td>Chevy</td>
-            <td>12</td>
-            <td>0.24</td>
-          </tr>
-          <tr>
-            <td>Honda</td>
-            <td>6</td>
-            <td>0.12</td>
-          </tr>
-          <tr>
-            <td>Toyota</td>
-            <td>12</td>
-            <td>0.24</td>
-          </tr>
-          <tr>
-            <td>Nissan</td>
-            <td>10</td>
-            <td>0.20</td>
-          </tr>
-          <tr>
-            <td>Other</td>
-            <td>5</td>
-            <td>0.10</td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td>50</td>
-            <td>1.00</td>
-          </tr>
-        </tbody>
-      </Table>
-    </div>
-);
-
-const stemPlot = "" +
-    "4|5 0\n" +
-    "5|8\n" +
-    "6|2 9 2 2\n" +
-    "7|4 5 2\n" +
-    "8|2 3";
+import globals from '../style/_globals.scss';
 
 export default class ChapterTwo extends Component {
 
   constructor(props) {
     super(props);
     this.chart = React.createRef();
+    this.state = {
+      usingNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+    };
   }
 
   componentDidMount() {
@@ -83,11 +29,66 @@ export default class ChapterTwo extends Component {
   }
 
   onWindowResize = () => {
+    this.setState({
+      usingNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+    });
     this.chart.current.getEchartsInstance().resize();
   };
 
-  render() {
-    const option = {
+  FrequencyTable = () => (
+      <div style={{ margin: this.state.usingNav ? '0' : '0 32px 0 32px' }}>
+        <Table bordered hover responsive size="sm">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Frequency</th>
+              <th>Relative Frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ford</td>
+              <td>5</td>
+              <td>0.10</td>
+            </tr>
+            <tr>
+              <td>Chevy</td>
+              <td>12</td>
+              <td>0.24</td>
+            </tr>
+            <tr>
+              <td>Honda</td>
+              <td>6</td>
+              <td>0.12</td>
+            </tr>
+            <tr>
+              <td>Toyota</td>
+              <td>12</td>
+              <td>0.24</td>
+            </tr>
+            <tr>
+              <td>Nissan</td>
+              <td>10</td>
+              <td>0.20</td>
+            </tr>
+            <tr>
+              <td>Other</td>
+              <td>5</td>
+              <td>0.10</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>50</td>
+              <td>1.00</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+  );
+
+
+  chartOptions = () => {
+    return {
       title: {
         text: 'Cars Driven by College Students',
         left: 'center',
@@ -111,20 +112,29 @@ export default class ChapterTwo extends Component {
           ]
         }
       ],
-    };
+    }
+  };
+
+  render() {
+    const stemPlot = "" +
+        "4|5 0\n" +
+        "5|8\n" +
+        "6|2 9 2 2\n" +
+        "7|4 5 2\n" +
+        "8|2 3";
 
     return (
         <div className="container">
           <h1>Chapter Two</h1>
           <hr/>
           <h5>&bull; Frequency</h5>
-          <FrequencyTable/>
+          {this.FrequencyTable()}
           <p className="indent">
             The total of the frequency column should be the number of observations in the data.
             The relative frequency is found by taking the frequency and dividing it by the total.
           </p>
           <ReactEchartsCore
-              option={option}
+              option={this.chartOptions()}
               echarts={echarts}
               ref={this.chart}
               style={{

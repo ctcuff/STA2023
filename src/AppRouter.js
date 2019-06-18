@@ -10,17 +10,21 @@ import ChapterThree from "./components/ChapterThree";
 import ChapterTen from "./components/ChapterTen";
 import NotFound from "./components/NotFound";
 import './style/AppRouter.scss';
+import globals from './style/_globals.scss';
 
 export default class AppRouter extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { useNav: window.innerWidth < 620 };
+    this.state = {
+      useNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+    };
     this.navLinks = React.createRef();
     this.sidebarLinks = React.createRef();
     this.routes = [
       {
         path: '/',
+        name: 'Home',
         exact: true,
         component: () => <Landing/>
       },
@@ -56,7 +60,9 @@ export default class AppRouter extends Component {
   }
 
   onWindowResize = () => {
-    this.setState({ useNav: window.innerWidth < 620 });
+    this.setState({
+      useNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+    });
   };
 
   onNavItemSelected = (route, event) => {
@@ -82,7 +88,7 @@ export default class AppRouter extends Component {
               <Link to="" style={headerStyle}>Home</Link>
             </li>
             <li style={headerStyle}>Chapters</li>
-            {this.routes.map(route => (
+            {this.routes.filter(r => r.name !== 'Home').map(route => (
                 <li key={route.path} className="AppRouter-li-indent">
                   <Link to={route.path}>{route.name}</Link>
                 </li>
@@ -93,7 +99,7 @@ export default class AppRouter extends Component {
 
     const nav = (
         <Navbar bg="light" expand="lg" collapseOnSelect id="navigation" className="AppRouter-navbar">
-          <Navbar.Brand>Chapters</Navbar.Brand>
+          <Navbar.Brand>STA 2023</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto" ref={this.navLinks} onSelect={this.onNavItemSelected}>

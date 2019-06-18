@@ -1,3 +1,9 @@
 $sidebar-width: 160px;
 $navbar-height: 56px;
 $screen-breakpoint: 620px;
+
+//noinspection CssInvalidPseudoSelector
+:export {
+  // Strips the px from the variable
+  screenBreakpoint: $screen-breakpoint / ($screen-breakpoint * 0 + 1);
+}
