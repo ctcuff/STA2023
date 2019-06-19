@@ -25,7 +25,6 @@ export default class AppRouter extends Component {
       {
         path: '/',
         name: 'Home',
-        exact: true,
         component: () => <Landing/>
       },
       {
@@ -96,19 +95,28 @@ export default class AppRouter extends Component {
 
   render() {
     const currentPath = window.location.pathname;
+
+    // Check for a 404 by checking if the current window path is valid.
+    // Note that /ch3 and /ch3/ are both valid but /ch3// is not.
+    const is404 = this.routes.find(route => {
+      const url = process.env.PUBLIC_URL + route.path;
+      return url === currentPath || url + '/' === currentPath;
+    }) === undefined;
+
+
     const headerStyle = {
       fontWeight: 'bold',
       color: '#000'
     };
 
     const sideBar = (
-        <div className="AppRouter-sidebar" id="navigation">
+        <div className="AppRouter-sidebar" id="navigation" style={{ display: is404 ? 'none' : 'block' }}>
           <ul className="AppRouter-ul" ref={this.sidebarLinks}>
             <li>
               <Link to="" style={headerStyle}>Home</Link>
             </li>
             <li style={headerStyle} id="chapters">Chapters</li>
-            {this.routes.filter(r => r.name !== 'Home').map(route => (
+            {this.routes.filter(route => route.name !== 'Home').map(route => (
                 <li key={route.path} className="AppRouter-li-indent">
                   <Link
                       to={route.path}
@@ -127,7 +135,14 @@ export default class AppRouter extends Component {
     );
 
     const nav = (
-        <Navbar bg="light" expand="lg" collapseOnSelect id="navigation" className="AppRouter-navbar">
+        <Navbar
+            bg="light"
+            expand="lg"
+            id="navigation"
+            className="AppRouter-navbar"
+            style={{ display: is404 ? 'none' : 'flex' }}
+            collapseOnSelect
+        >
           <Navbar.Brand>STA 2023</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
@@ -149,13 +164,13 @@ export default class AppRouter extends Component {
             {this.routes.map((route, index) => (
                 <Route
                     path={route.path}
-                    exact={route.exact}
                     sensitive={false}
                     render={() => {
                       this.setLinkActive(window.location);
                       return route.component();
                     }}
                     key={index}
+                    exact
                 />
             ))}
             <Route component={NotFound}/>
