@@ -22,8 +22,8 @@ export default class ChapterOne extends Component {
           <hr/>
           <h5 className="header">&bull; Nominal vs Ordinal vs Interval vs Ratio</h5>
           <p className="indent">
-            First, if the variable is <WordSpan word="qualitative" definition={this.wordList['qualitative']}/> (
-            words instead of numbers) then it is either nominal or ordinal. Now ask yourself if you can put the data
+            First, if the variable is <WordSpan word="qualitative" definition={this.wordList['qualitative']}/> (words
+            instead of numbers) then it is either nominal or ordinal. Now ask yourself if you can put the data
             in a particular order. If you can it is <WordSpan word="ordinal" definition={this.wordList['ordinal']}/>.
             Otherwise, it is <WordSpan word="nominal" definition={this.wordList['nominal']}/>. If the variable
             is <WordSpan word="quantitative" definition={this.wordList['quantitative']}/> (numbers),

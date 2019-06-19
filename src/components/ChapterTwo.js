@@ -14,9 +14,8 @@ export default class ChapterTwo extends Component {
 
   constructor(props) {
     super(props);
-    this.chart = React.createRef();
     this.state = {
-      usingNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+      isMobile: window.innerWidth < parseInt(globals.screenBreakpoint)
     };
   }
 
@@ -30,13 +29,12 @@ export default class ChapterTwo extends Component {
 
   onWindowResize = () => {
     this.setState({
-      usingNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+      isMobile: window.innerWidth < parseInt(globals.screenBreakpoint)
     });
-    this.chart.current.getEchartsInstance().resize();
   };
 
   FrequencyTable = () => (
-      <div style={{ margin: this.state.usingNav ? '0' : '0 32px 0 32px' }}>
+      <div style={{ margin: this.state.isMobile ? '0' : '0 32px 0 32px' }}>
         <Table bordered hover responsive size="sm">
           <thead>
             <tr>
@@ -136,7 +134,6 @@ export default class ChapterTwo extends Component {
           <ReactEchartsCore
               option={this.chartOptions()}
               echarts={echarts}
-              ref={this.chart}
               style={{
                 height: 400,
                 width: '100%',
