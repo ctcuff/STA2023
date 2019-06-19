@@ -2,7 +2,7 @@
 
 $navigationColor: #ececec;
 
-.AppRouter-sidenav {
+.AppRouter-sidebar {
   height: 100%;
   width: $sidebar-width;
   position: fixed;
@@ -12,35 +12,38 @@ $navigationColor: #ececec;
   background-color: $navigationColor;
   overflow-x: hidden;
   padding-top: 20px;
+
+  & > ul {
+    padding-left: 0;
+    list-style: none inside;
+    & > li:not(.AppRouter-li-indent) {
+      margin: 8px 0 8px 12px;
+      & > a {
+        text-decoration: none;
+        color: #1a1a1abf;
+        &:focus {
+          color: darkred;
+        }
+      }
+    }
+  }
+}
+
+.AppRouter-li-indent {
+  margin: 8px 0 8px 25px;
+  & > a {
+    color: #1a1a1abf;
+  }
 }
 
 .AppRouter-navbar {
   background-color: $navigationColor !important;
 }
 
-.AppRouter-li-indent {
-  margin: 8px 0 8px 25px;
-  & > a {
-    text-decoration: none;
-    color: #1a1a1abf;
-    &:focus {
-      color: red;
-    }
-  }
+.AppRouter-sidebar-active {
+  color: red !important;
 }
 
-.AppRouter-ul {
-  padding-left: 0;
-  list-style: none inside;
-
-  & > li:not(.AppRouter-li-indent) {
-    margin: 8px 0 8px 12px;
-    & > a {
-      text-decoration: none;
-      color: #1a1a1abf;
-      &:focus {
-        color: darkred;
-      }
-    }
-  }
+.AppRouter-nav-link-container > a.active:not(:first-child) {
+  color: red !important;
 }

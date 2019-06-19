@@ -9,15 +9,15 @@ import ChapterTwo from "./components/ChapterTwo";
 import ChapterThree from "./components/ChapterThree";
 import ChapterTen from "./components/ChapterTen";
 import NotFound from "./components/NotFound";
-import './style/AppRouter.scss';
 import globals from './style/_globals.scss';
+import './style/AppRouter.scss';
 
 export default class AppRouter extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      useNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+      isMobile: window.innerWidth < parseInt(globals.screenBreakpoint)
     };
     this.navLinks = React.createRef();
     this.sidebarLinks = React.createRef();
@@ -52,6 +52,7 @@ export default class AppRouter extends Component {
   }
 
   componentDidMount() {
+    this.setLinkActive(window.location);
     window.addEventListener('resize', this.onWindowResize);
   }
 
@@ -61,36 +62,64 @@ export default class AppRouter extends Component {
 
   onWindowResize = () => {
     this.setState({
-      useNav: window.innerWidth < parseInt(globals.screenBreakpoint)
+      isMobile: window.innerWidth < parseInt(globals.screenBreakpoint)
     });
   };
 
-  onNavItemSelected = (route, event) => {
-    // Makes sure only one nav link is active at a time
-    const navLinks = this.navLinks.current.listNode;
-    [...navLinks.children].forEach(child => {
-      if (child !== event.target) {
-        child.classList.remove('active');
+  setLinkActive = ({ pathname }) => {
+    const sidebarLinks = this.sidebarLinks.current;
+    if (!sidebarLinks) {
+      return;
+    }
+
+    const listItems = [...sidebarLinks.children];
+    let current = listItems.find(link => link.firstChild.pathname === pathname);
+
+    // This will be null/undefined when there is a 404
+    if (!current) {
+      return;
+    }
+    current = current.firstChild;
+
+    // Don't turn the 'Home' link red
+    if (current.pathname !== process.env.PUBLIC_URL + '/') {
+      current.classList.add('AppRouter-sidebar-active');
+    }
+
+    listItems.forEach(item => {
+      const child = item.firstChild;
+      if (child.classList !== undefined && child !== current) {
+        child.classList.remove('AppRouter-sidebar-active');
       }
-    })
+    });
   };
 
   render() {
+    const currentPath = window.location.pathname;
     const headerStyle = {
       fontWeight: 'bold',
       color: '#000'
     };
 
     const sideBar = (
-        <div className="AppRouter-sidenav" id="navigation">
+        <div className="AppRouter-sidebar" id="navigation">
           <ul className="AppRouter-ul" ref={this.sidebarLinks}>
             <li>
               <Link to="" style={headerStyle}>Home</Link>
             </li>
-            <li style={headerStyle}>Chapters</li>
+            <li style={headerStyle} id="chapters">Chapters</li>
             {this.routes.filter(r => r.name !== 'Home').map(route => (
                 <li key={route.path} className="AppRouter-li-indent">
-                  <Link to={route.path}>{route.name}</Link>
+                  <Link
+                      to={route.path}
+                      className={
+                        process.env.PUBLIC_URL + route.path === currentPath
+                            ? 'AppRouter-sidebar-active'
+                            : ''
+                      }
+                  >
+                    {route.name}
+                  </Link>
                 </li>
             ))}
           </ul>
@@ -102,7 +131,7 @@ export default class AppRouter extends Component {
           <Navbar.Brand>STA 2023</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto" ref={this.navLinks} onSelect={this.onNavItemSelected}>
+            <Nav className="mr-auto AppRouter-nav-link-container" ref={this.navLinks}>
               {this.routes.map(route => (
                   <LinkContainer to={route.path} key={route.path}>
                     <Nav.Link>{route.name}</Nav.Link>
@@ -115,20 +144,23 @@ export default class AppRouter extends Component {
 
     return (
         <Router basename={process.env.PUBLIC_URL}>
-          {this.state.useNav ? nav : sideBar}
+          {this.state.isMobile ? nav : sideBar}
           <Switch>
             {this.routes.map((route, index) => (
                 <Route
                     path={route.path}
                     exact={route.exact}
                     sensitive={false}
-                    component={route.component}
+                    render={() => {
+                      this.setLinkActive(window.location);
+                      return route.component();
+                    }}
                     key={index}
                 />
             ))}
             <Route component={NotFound}/>
           </Switch>
         </Router>
-    )
+    );
   }
 }
