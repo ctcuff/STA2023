@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3830a23245707dad2c04d80e3af2ee5b",
+    "revision": "4869202106d3730fdb9b552708fd5431",
     "url": "/STA2023/index.html"
   },
   {
-    "revision": "b993692545f08e87d84e",
+    "revision": "85fccd1541c33fec5739",
     "url": "/STA2023/static/css/2.c75f12da.chunk.css"
   },
   {
-    "revision": "8f2f8222ddb29dd7bfaf",
-    "url": "/STA2023/static/css/main.f3d9e682.chunk.css"
+    "revision": "5f68c959d7d4cdf2dbcf",
+    "url": "/STA2023/static/css/main.25f51b55.chunk.css"
   },
   {
-    "revision": "b993692545f08e87d84e",
-    "url": "/STA2023/static/js/2.6e18a32c.chunk.js"
+    "revision": "85fccd1541c33fec5739",
+    "url": "/STA2023/static/js/2.e3d8a106.chunk.js"
   },
   {
-    "revision": "8f2f8222ddb29dd7bfaf",
-    "url": "/STA2023/static/js/main.ae711871.chunk.js"
+    "revision": "5f68c959d7d4cdf2dbcf",
+    "url": "/STA2023/static/js/main.9477ba09.chunk.js"
   },
   {
     "revision": "90ea010029496012457f",
@@ -254,5 +254,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3f9fdb1143d792627bbe516d5e1f3911",
     "url": "/STA2023/static/media/freq.3f9fdb11.png"
+  },
+  {
+    "revision": "3533bd08f49f2a1d4be98ad73f05466a",
+    "url": "/STA2023/static/media/scatter-plots-correlation.3533bd08.jpg"
   }
 ]);
