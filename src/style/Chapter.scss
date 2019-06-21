@@ -34,6 +34,10 @@ mark {
   }
 }
 
+ul.list-style-none  {
+  list-style: none inside;
+}
+
 .ul-indent-level-2 {
   margin: 8px 64px 0 48px;
 }

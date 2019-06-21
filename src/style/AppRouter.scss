@@ -1,6 +1,6 @@
 @import "globals";
 
-$navigationColor: #ececec;
+$navigation-color: #ececec;
 
 .AppRouter-sidebar {
   height: 100%;
@@ -9,7 +9,7 @@ $navigationColor: #ececec;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: $navigationColor;
+  background-color: $navigation-color;
   overflow-x: hidden;
   padding-top: 20px;
 
@@ -18,15 +18,12 @@ $navigationColor: #ececec;
     list-style: none inside;
     & > li:not(.AppRouter-li-indent) {
       margin: 8px 0 8px 12px;
-      & > a {
-        text-decoration: none;
-        color: #1a1a1abf;
-        &:focus {
-          color: darkred;
-        }
-      }
     }
   }
+}
+
+.AppRouter-sidebar-active {
+  color: red !important;
 }
 
 .AppRouter-li-indent {
@@ -37,13 +34,9 @@ $navigationColor: #ececec;
 }
 
 .AppRouter-navbar {
-  background-color: $navigationColor !important;
-}
+  background-color: $navigation-color !important;
 
-.AppRouter-sidebar-active {
-  color: red !important;
-}
-
-.AppRouter-nav-link-container > a.active:not(:first-child) {
-  color: red !important;
+  a.active:not(:first-child) {
+    color: red !important;
+  }
 }

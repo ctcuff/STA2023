@@ -19,7 +19,6 @@ export default class AppRouter extends Component {
     this.state = {
       isMobile: window.innerWidth < parseInt(globals.screenBreakpoint)
     };
-    this.navLinks = React.createRef();
     this.sidebarLinks = React.createRef();
     this.routes = [
       {
@@ -110,13 +109,13 @@ export default class AppRouter extends Component {
     };
 
     const sideBar = (
-        <div className="AppRouter-sidebar" id="navigation" style={{ display: is404 ? 'none' : 'block' }}>
+        <div className="AppRouter-sidebar" style={{ display: is404 ? 'none' : 'block' }}>
           <ul className="AppRouter-ul" ref={this.sidebarLinks}>
             <li>
               <Link to="" style={headerStyle}>Home</Link>
             </li>
             <li style={headerStyle} id="chapters">Chapters</li>
-            {this.routes.filter(route => route.name !== 'Home').map(route => (
+            {this.routes.filter(route => route.name.includes('Chapter')).map(route => (
                 <li key={route.path} className="AppRouter-li-indent">
                   <Link
                       to={route.path}
@@ -138,7 +137,6 @@ export default class AppRouter extends Component {
         <Navbar
             bg="light"
             expand="lg"
-            id="navigation"
             className="AppRouter-navbar"
             style={{ display: is404 ? 'none' : 'flex' }}
             collapseOnSelect
@@ -146,7 +144,7 @@ export default class AppRouter extends Component {
           <Navbar.Brand>STA 2023</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto AppRouter-nav-link-container" ref={this.navLinks}>
+            <Nav className="mr-auto">
               {this.routes.map(route => (
                   <LinkContainer to={route.path} key={route.path}>
                     <Nav.Link>{route.name}</Nav.Link>
