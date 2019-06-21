@@ -1,0 +1,9 @@
+Regression - Answers if there is a relationship between 2 variables.
+Correlation - Answers how strong a linear relationship is.
+Residuals - The difference between the actual values and the estimated values.
+Independent variable - Also called the explanatory variable or predictor variable, this is the x-value or the input in the equation.
+Dependent variable - Also called the response variable, this responds to the independent variable. This is the output.
+Linear correlation coefficient - Referred to as r, this is a measure of the strength and direction of the linear relation between two quantitative variables.
+Coefficient of Determination - Referred to as r squared, this is the proportion of the variance between two variables.
+Variance - Measures how far the data is spread out (the average squared distance from the mean).
+Bivariate - Data involving 2 variables. One value of one variable is paired with another value of another variable.

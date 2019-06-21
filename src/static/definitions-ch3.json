@@ -22,5 +22,9 @@
   {
     "word": "Standard deviation",
     "definition": "How far each value is from the mean."
+  },
+  {
+    "word": "Variance",
+    "definition": "Measures how far the data is spread out (the average squared distance from the mean)."
   }
 ]

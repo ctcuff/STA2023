@@ -4,3 +4,4 @@ Mean - The average (sum of entries / total entries)
 Range -the difference between the highest and the lowest data values (or maximum and minimum values).
 Standard deviation - How far each value is from the mean.
 Ranking - A percentile . It represents a location measurement of a data value to the rest of the values.
+Variance - Measures how far the data is spread out (the average squared distance from the mean).
