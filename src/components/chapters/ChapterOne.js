@@ -1,8 +1,8 @@
 import React from 'react';
-import jsonDefinitions from '../static/definitions-ch1';
-import WordSpan from './WordSpan';
-import Definitions from './Definitions';
-import '../style/Chapter.scss';
+import jsonDefinitions from '../../static/definitions-ch1';
+import WordSpan from '../WordSpan';
+import Definitions from '../Definitions';
+import '../../style/Chapter.scss';
 
 const wordList = {};
 jsonDefinitions.forEach(item => {
@@ -64,7 +64,7 @@ export default function ChapterOne() {
         <hr className="hr-spacing"/>
         <h5>&bull; Sampling</h5>
         <p className="indent">Simple random sample</p>
-        <ul className="ul-indent-level-2">
+        <ul className="ul-indent-level-2 spacing">
           <li>Put all names in a hat and draw a certain number of names out.</li>
           <li>
             Assign each individual a number and use a random number table or a calculator or
@@ -72,7 +72,7 @@ export default function ChapterOne() {
           </li>
         </ul>
         <p className="indent">Stratified sampling</p>
-        <ul className="ul-indent-level-2">
+        <ul className="ul-indent-level-2 spacing">
           <li>
             If you want to look at musical preference, you could divide the individuals into
             age groups and then conduct simple random samples inside each group.
@@ -84,13 +84,13 @@ export default function ChapterOne() {
           </li>
         </ul>
         <p className="indent">Systematic sampling</p>
-        <ul className="ul-indent-level-2">
+        <ul className="ul-indent-level-2 spacing">
           <li>You select every 5th item on an assembly line.</li>
           <li>You select every 10th name on the list.</li>
           <li>You select every 3rd customer that comes into the store.</li>
         </ul>
         <p className="indent">Cluster sampling</p>
-        <ul className="ul-indent-level-2">
+        <ul className="ul-indent-level-2 spacing">
           <li>
             A large city wants to poll all businesses in the city. They divide the city into
             sections (clusters), maybe a square block for each section, and use a random
@@ -105,7 +105,7 @@ export default function ChapterOne() {
           </li>
         </ul>
         <p className="indent">Convenience sample (should be avoided)</p>
-        <ul className="ul-indent-level-2">
+        <ul className="ul-indent-level-2 spacing">
           <li>
             An example of a convenience sample is if you want to know the opinion of people about
             the criminal justice system, and you stand on a street corner near the county court house,

@@ -1,12 +1,12 @@
 import React from 'react';
 import { InlineMath } from 'react-katex';
-import Definitions from './Definitions';
-import graph from '../static/freq.png';
-import boxplot from '../static/boxplot.png';
-import jsonDefinitions from '../static/definitions-ch3';
+import Definitions from '../Definitions';
+import graph from '../../static/freq.png';
+import boxplot from '../../static/boxplot.png';
+import jsonDefinitions from '../../static/definitions-ch3';
 import 'katex/dist/katex.min.css';
-import '../style/Chapter.scss';
-import WordSpan from "./WordSpan";
+import '../../style/Chapter.scss';
+import WordSpan from "../WordSpan";
 
 const wordList = {};
 jsonDefinitions.forEach(item => {
@@ -105,7 +105,10 @@ export default function ChapterThree() {
         </ol>
         <p className="indent">
           The five-number summary is the minimum, the first quartile (Q1), the median, the third quartile (Q3), and
-          the maximum (in that order).
+          the maximum (in that order). {}
+          <a href="https://www.hackmath.net/en/calculator/quartile-q1-q3" rel="noopener noreferrer" target="_blank">
+            Here is a site that calculates quartiles.
+          </a>
         </p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <img src={boxplot} alt="" className="img-responsive" height="100%"/>

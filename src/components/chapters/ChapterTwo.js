@@ -7,8 +7,8 @@ import 'echarts/lib/chart/pie';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'katex/dist/katex.min.css';
-import '../style/Chapter.scss';
-import globals from '../style/_globals.scss';
+import '../../style/Chapter.scss';
+import globals from '../../style/_globals.scss';
 
 export default class ChapterTwo extends Component {
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import Definitions from './Definitions';
+import Definitions from '../Definitions';
 import { InlineMath } from 'react-katex';
-import WordSpan from './WordSpan';
-import jsonDefinitions from '../static/definitions-ch10.json';
-import correlation from '../static/scatter-plots-correlation.jpg'
-import '../style/Chapter.scss';
+import WordSpan from '../WordSpan';
+import jsonDefinitions from '../../static/definitions-ch10.json';
+import correlation from '../../static/scatter-plots-correlation.jpg'
+import '../../style/Chapter.scss';
 import 'katex/dist/katex.min.css';
 
 const wordList = {};
@@ -64,7 +64,6 @@ export default function ChapterTen() {
             <WordSpan word="Coefficient of Determination" definition={wordList['coefficient of determination']}/>
             {} (r<sup>2</sup>):
             <div className="spacer"/>
-
 
             <div
                 style={{
