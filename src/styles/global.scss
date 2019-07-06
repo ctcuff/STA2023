@@ -1,0 +1,44 @@
+$sidebar-width: 160px;
+$navbar-height: 56px;
+$screen-breakpoint: 620px;
+
+//noinspection CssInvalidPseudoSelector,CssUnknownProperty
+:export {
+  sidebarWidth: $sidebar-width;
+  navbarHeight: $navbar-height;
+  screenBreakpoint: 620;
+}
+
+body {
+  margin: 0;
+  font-family: Consolas, monospace !important;
+}
+
+mark {
+  background: rgba(255, 229, 2, .43) !important;
+}
+
+code {
+  font-size: 16px !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b7b7b7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #838383;
+}
+
+.inline-math > span {
+  font-size: 20px;
+}

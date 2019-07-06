@@ -1,0 +1,23 @@
+@import "global";
+
+.img-responsive {
+  width: 60%;
+}
+
+// Desktop
+@media screen and (min-width: $screen-breakpoint) {
+  .indent {
+    margin: 0 64px 0 32px;
+  }
+}
+
+// Mobile
+@media screen and (max-width: $screen-breakpoint - 1) {
+  .indent {
+    margin: 0 16px 0 16px;
+  }
+
+  .img-responsive {
+    width: 100%;
+  }
+}

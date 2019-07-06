@@ -1,0 +1,145 @@
+---
+path: /ch3
+title: Chapter Three
+chapter: 3
+---
+
+import { 
+    Indent, 
+    Spacer, 
+    ListSpacer, 
+    WordSpan, 
+    DefinitionList 
+} from 'components/markdown';
+import { InlineMath } from 'react-katex';
+import freq from 'static/freq.png';
+import boxPlot from 'static/boxplot.png';
+import ch3Defs from 'static/definitions-ch3.json';
+import 'katex/dist/katex.min.css';
+
+export const wordList = {};
+ch3Defs.forEach(item => {
+  wordList[item.word.toLowerCase()] = item.definition;
+});
+
+##### Mean, Median, and Mode
+
+<Indent>
+
+<mark>A data set can have more than one mode.</mark>If there is a tie 
+between two values for the most number of times then both values are 
+the mode and the data is called bimodal (two modes). If every data point 
+occurs the same number of times, there is no mode. If there are more 
+than two numbers that appear the most times, then usually there is no mode.
+
+<Spacer/>
+
+If there are extreme values in the data, the median is a better measure 
+of the center than the mean. If there are no extreme values, the mean 
+and the median will be similar so most people use the mean.
+
+<Spacer/>
+<img src={freq}/>
+<Spacer/>
+
+- Weighted Average
+
+    - <InlineMath math={String.raw`\frac{\sum (xw)}{\sum w}`}/>
+    {' '} where <InlineMath math="w"/> is the weight of the data value, 
+    <InlineMath math="x"/>
+
+<ListSpacer/>
+
+- <WordSpan word="Standard Deviation" definition={wordList['standard deviation']}/>
+
+    - <InlineMath math={String.raw`s = \sqrt{\frac{\sum (x - \bar x)^2}{n - 1}}`}/> 
+    {' '} where <InlineMath math={String.raw`\bar x`}/> is the mean and 
+    {' '} <InlineMath math="n"/> is the sample size.
+
+<ListSpacer/>
+
+- Population variance
+
+    - <InlineMath math={String.raw`\sigma^2=\sqrt{\frac{\sum(x-\mu)^2}{N}}`}/> 
+    where <InlineMath math="\mu"/> (greek letter mu) is the population mean and 
+    {' '} <InlineMath math="N"/> is the size of the population.
+
+<mark>Note: The sum of the deviation should always be zero. If is isn't, you made an error.</mark>
+
+</Indent>
+
+---
+<Spacer/>
+
+##### Ranking
+
+<Indent>
+
+The kth percentile is the data value that has k% of the data at or below that value.
+<Spacer/>
+</Indent>
+
+##### Example 3.3.1: Interpreting Percentile
+
+<Indent>
+<ListSpacer/>
+
+a) What does a score of the 90<sup>th</sup> percentile mean?
+<Indent>
+This means that 90% of the scores were at or below this score. (A person did 
+the same as or better than 90% of the test takers.)
+</Indent>
+
+<Spacer/>
+
+b) What does a score of the 70th percentile mean?
+<Indent>
+This means that 70% of the scores were at or below this score.
+</Indent>
+
+</Indent>
+
+<Spacer/>
+
+##### Example 3.3.2: Percentile Versus Score
+
+<Indent>
+<ListSpacer/>
+
+a) If the test was out of 100 points and you scored at the 80th percentile, what was your score on the test?
+
+<Indent>
+You don’t know! All you know is that you scored the same as or 
+better than 80% of the people who took the test. If all the scores 
+were really low, you could have still failed the test. On the other hand, 
+if many of the scores were high you could have gotten a 95% or so.
+</Indent>
+
+</Indent>
+
+<Spacer/>
+
+##### Quartiles
+
+<Indent>
+
+To find the quartiles:
+
+1. Sort the data in increasing order.
+
+2. Find the median, this divides the data list into 2 halves.
+
+3. Find the median of the data below the median. This value is Q1.
+ 
+4. Find the median of the data above the median. This value is Q3.
+
+The five-number summary is the minimum, the first quartile (Q1), 
+the median, the third quartile (Q3), and the maximum (in that order).
+
+<img src={boxPlot}/>
+
+</Indent>
+
+---
+
+<DefinitionList json={ch3Defs}/>

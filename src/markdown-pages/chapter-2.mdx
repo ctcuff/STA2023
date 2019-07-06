@@ -1,0 +1,101 @@
+---
+path: '/ch2'
+title: 'Chapter Two'
+chapter: 2
+---
+
+import { Indent, Spacer, ListSpacer, WordSpan } from 'components/markdown';
+import { InlineMath } from 'react-katex';
+import PieChart from 'components/pie-chart';
+import 'katex/dist/katex.min.css';
+
+
+#### Frequency
+
+<Indent>
+
+| Category | Frequency | Relative Frequency |
+| -------- | --------- | ------------------ |
+| Ford     | 5         | 0.10               |
+| Chevy    | 12        | 0.24               |
+| Honda    | 6         | 0.12               |
+| Toyota   | 12        | 0.24               |
+| Nissan   | 10        | 0.20               |
+| Other    | 5         | 0.10               |
+| Total    | 50        | 1.00               |
+
+The total of the frequency column should be the number of
+observations in the data. The relative frequency is found by taking
+the frequency and dividing it by the total.
+
+<PieChart />
+
+A <mark>frequency distribution</mark> lists each category of data how many
+times that data occurs.
+
+The <mark>relative frequency</mark> is the proportion (or percent or probability which
+is what you are looking at divided by the total amount) of observations
+within a category and is found using the formula: <InlineMath math={String.raw`\frac{\text{frequency}}{\sum \text{frequencies}}`}/>
+
+A <mark>relative frequency</mark> distribution lists each category of data
+with the relative frequency. It is found using the
+formula: <InlineMath math={String.raw`\frac{\text{frequency}}{\text{\# of data points}}`}/>
+
+</Indent>
+
+<Spacer />
+
+#### Steps to make a frequency distribution
+
+<Indent>
+
+<ListSpacer />
+
+1. Find the range (max - min)
+
+2. Pick the number of classes to use. Usually this is between 5
+   and 20. Pick 5 classes if there is a small amount of data and 20
+   classes if there is a lot (think 1,000).
+
+3. Find the class width: <InlineMath math={String.raw`\frac{\text{range}}{\text{\# of classes}}`}/>
+   **always** round up to the next whole number.
+
+4. Create the classes. Each class has limits that determine
+   which values fall in each class. To find the class limits,
+   set the smallest value as the lower class limit for the first
+   class then add the class width to the lower class limit to get
+   the next lower class limit. Repeat until you get all the classes.
+   The upper class limit for a class is one less than the lower limit
+   for the next class.
+
+5. Find the class boundary by subtracting 0.5 from lower class limit
+   and adding 0.5 to the upper class limit.
+
+6. To find the class boundaries, subtract 0.5 from the lower class
+   limit and add 0.5 to the upper class limit.
+
+7. To find the class midpoint (you might not always need it):
+   Midpoint = <InlineMath math={String.raw`\frac{\text{lower limit + upper limit }}{2}`}/>
+
+8. To figure out the number of data points that fall in each class,
+   go through each data value and see which class boundaries it is between
+
+<ListSpacer />
+
+</Indent>
+
+---
+
+#### Stem and Leaf Plot
+
+<Indent>
+
+    4|5 0
+    5|8
+    6|2 9 2 2
+    7|4 5 2
+    8|2 3
+
+This data is read as 45, 40, 58, 62, 69, 62, 62, 74, 75, 72, 82, 83
+
+</Indent>

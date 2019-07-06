@@ -1,0 +1,114 @@
+---
+path: "/ch10"
+title: "Chapter Ten"
+chapter: 10
+---
+
+import { 
+    Indent, 
+    Spacer, 
+    ListSpacer, 
+    WordSpan, 
+    DefinitionList 
+} from 'components/markdown';
+import scatterPlot from 'static/scatter-plots-correlation.jpg';
+import ch10Defs from 'static/definitions-ch10.json';
+
+export const boxStyle = {
+    width: 'fit-content',
+    border: '1px solid black',
+    padding: 16
+};
+
+export const Box = ({ children }) => (
+    <div style={boxStyle}>{children}</div>
+);
+
+export const wordList = {};
+ch10Defs.forEach(item => {
+  wordList[item.word.toLowerCase()] = item.definition;
+});
+
+##### Regression and Correlation
+
+<Indent>
+
+Asks "Is there a relationship between two variables?" and 
+"How strong is that relationship?"
+
+The best fitting line is the linear relationship in the data. 
+<WordSpan word="Residuals" definition={wordList['residuals']}/> are the 
+distance each point is from the best fit line.
+
+The equation for linear regression is:
+
+<Spacer/>
+<Indent>
+<InlineMath math={String.raw`y = a + bx`}/>
+</Indent>
+<Spacer/>
+
+**_y_** is the <mark>dependent</mark> variable and **_x_** is 
+the<mark>independent</mark> variable. **_a_** is the y-intercept 
+and is found with the formula:
+
+<Spacer/>
+<Indent>
+<InlineMath math={String.raw`a = \frac{(\sum y)(\sum x^2) - (\sum x)(\sum xy)}{n(\sum x^2) - (\sum x)^2}`}/>
+</Indent>
+<Spacer/>
+
+**_b_** is the slope and is found with the formula:
+
+<Spacer/>
+<Indent>
+<InlineMath math={String.raw`b = \frac{n(\sum xy) - (\sum x)(\sum y)}{n(\sum x^2) - (\sum x)^2}`}/>
+</Indent>
+<Spacer/>
+
+**_n_** is the sample size (number of rows on the table). This is a lot
+of work so just plug the values into a calculator like
+[this one](https://www.hackmath.net/en/calculator/linear-regression).
+
+<WordSpan word="Linear correlation coefficient" definition={wordList['linear correlation coefficient']}/> 
+(r) and {' '}
+<WordSpan word="Coefficient of Determination" definition={wordList['coefficient of determination']}/> 
+{' '} (r<sup>2</sup>):
+
+<Spacer/>
+
+<Box>
+<InlineMath math={String.raw`r = \frac{SS_{xy}}{\sqrt{SS_xSS_y}}`}/>
+
+Where
+
+<InlineMath math={String.raw`SS_x = \sum{(x-\bar x)^2}`}/><br/>
+
+<InlineMath math={String.raw`SS_y = \sum{(y - \bar y)^2}`}/><br/>
+
+<InlineMath math={String.raw`SS_{xy} = \sum{(x - \bar x)(y - \bar y)}`}/><br/>
+
+<InlineMath math={String.raw`\bar x`}/> and <InlineMath math={String.raw`\bar y`}/> are the mean
+
+</Box>
+
+<Spacer/>
+
+- Positive r represents a positive association (goes up), negative r represents a negative association (goes down)
+
+- r is always between -1 and 1
+
+- The closer to 1 or -1 the stronger it gets
+
+- The closer to 0 the weaker it gets
+
+- If r is 0, this means that there is no **linear** correlation
+
+<Spacer/>
+<img src={scatterPlot}/>
+
+</Indent>
+
+---
+
+<DefinitionList json={ch10Defs}/>
