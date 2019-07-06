@@ -4,10 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Landing from './components/Landing'
-import ChapterOne from "./components/ChapterOne";
-import ChapterTwo from "./components/ChapterTwo";
-import ChapterThree from "./components/ChapterThree";
-import ChapterTen from "./components/ChapterTen";
+import ChapterOne from "./components/chapters/ChapterOne";
+import ChapterTwo from "./components/chapters/ChapterTwo";
+import ChapterThree from "./components/chapters/ChapterThree";
+import ChapterTen from "./components/chapters/ChapterTen";
 import NotFound from "./components/NotFound";
 import globals from './style/_globals.scss';
 import './style/AppRouter.scss';

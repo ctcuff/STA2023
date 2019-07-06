@@ -38,6 +38,10 @@ ul.list-style-none  {
   list-style: none inside;
 }
 
+ul.spacing > li:last-child {
+  margin-bottom: 16px;
+}
+
 .ul-indent-level-2 {
   margin: 8px 64px 0 48px;
 }
