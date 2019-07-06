@@ -1,0 +1,38 @@
+[
+  {
+    "word": "Bivariate",
+    "definition": "Data involving 2 variables. One value of one variable is paired with another value of another variable."
+  },
+  {
+    "word": "Coefficient of Determination",
+    "definition": "Referred to as r squared, this is the proportion of the variance between two variables."
+  },
+  {
+    "word": "Correlation",
+    "definition": "Answers how strong a linear relationship is."
+  },
+  {
+    "word": "Dependent variable",
+    "definition": "Also called the response variable, this responds to the independent variable. This is the output."
+  },
+  {
+    "word": "Independent variable",
+    "definition": "Also called the explanatory variable or predictor variable, this is the x"
+  },
+  {
+    "word": "Linear correlation coefficient",
+    "definition": "Referred to as r, this is a measure of the strength and direction of the linear relation between two quantitative variables."
+  },
+  {
+    "word": "Regression",
+    "definition": "Answers if there is a relationship between 2 variables."
+  },
+  {
+    "word": "Residuals",
+    "definition": "The difference between the actual values and the estimated values."
+  },
+  {
+    "word": "Variance",
+    "definition": "Measures how far the data is spread out (the average squared distance from the mean)."
+  }
+]
